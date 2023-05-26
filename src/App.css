@@ -1,38 +1,415 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+
 .App {
-  text-align: center;
-}
+  width:100%;
+  height:100%;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align: center;   
+ 
+} 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.Nav{
+  width:100%;
+  height:80px;
+  position:fixed;
+  box-shadow:grey 0px 0px 5px -1px;
+  top:0px;
+  background-color: white;
+  z-index:2;
+  display:flex;
+  justify-content: flex-end;
+  padding-right:30px;
+  gap:20px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.Nav-link{
+  text-decoration:none;
+  color:black;
+  font-size: 25px;
+  font-weight:bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+.DropDownMenu{
+  position:fixed;
+  top:80px;
+  right:30px;
+}
+
+
+.ShowNavMenuBtn{
+  display:none;
+}
+
+.NavMenuList{
+  display:none;
+}
+
+@media(max-width:800px){
+  .Nav-link{
+    display:none;
   }
-  to {
-    transform: rotate(360deg);
+  .ShowNavMenuBtn{
+    display:block;
   }
 }
+
+@media(min-width:800px){
+  .NavMenuList{
+    display:none;
+  }
+}
+
+.HomePage{
+  width:100%;
+  height:720px;
+  padding-top:180px;
+}
+
+.About{
+  width:100%;
+  height:650px;
+  background-color: rgba(193, 170, 170, 0.107);
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+@media (max-width:800px){
+  .About{
+    display:flex;
+    flex-direction:column;
+    padding-top:10%;
+
+  }
+}
+
+
+.heartANDpicture{
+  position:relative;
+  z-index:0;
+  
+}
+
+
+
+/* Below is HeartBeatingEffect ********************************************************************************************/
+.Heart{
+  width: 100px;
+  height: 100px;
+  margin: 25px auto; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  animation: HeartBeatingEffect 0.1s linear infinite alternate;
+  position:absolute;
+  z-index:1;
+  left:120px;
+  bottom:-50px;
+}
+
+@keyframes HeartBeatingEffect{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.3);
+  }
+}
+
+.left,.right{
+    width: 30px;
+    height:50px;
+    background-color: pink;
+    border-radius:50px 50px 0 0;
+    box-shadow:0px 0px 35px 5px pink;
+  }
+
+  .left{
+    transform: translateX(7px) rotate(-45deg);
+  }
+  .right{
+    transform: translateX(-7px) rotate(45deg);
+  }
+
+
+  .Project{
+  display:flex;
+  width:100%;
+  height:1000px;
+}
+
+
+/* below is spinning disc ************************************************************************************************/
+
+.disc{
+  width:250px;
+  height:250px;
+  border:80px solid rgb(218, 189, 21);
+  border-left:80px solid goldenrod;
+  border-right:80px solid gold;
+  border-bottom:80px solid yellow;
+  border-radius:125px 125px 125px 125px;  /*当border-raius的值超过border时，border里面的区域也会圆角化*/
+  /* box-shadow:100px 10px 10px 10px;  */
+  background-color:white;
+  animation:Rotate infinite 12s linear;
+}
+@keyframes Rotate{
+  0%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+}
+/* 
+.discContainer{
+  position:relative;
+  z-index:0;
+  width:200px;
+  height:200px;
+  position:relative;
+  z-index:0;
+  margin-left:70%;
+  margin-top:10%;
+} */
+
+/* .discCenter{
+  width:90px;
+  height:90px;
+  background-color:white;
+  border-radius:90px;
+  right:15%;
+  top:40%;
+  position:absolute;
+  z-index:1;
+  line-height:10px;
+} */
+
+@media(max-width:800px){
+  .HomePage{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+  }
+  .discContainer{
+    position:relative;
+    z-index:0;
+    width:200px;
+    height:200px;
+    position:relative;
+    z-index:0;
+  }
+  .discCenter{
+    width:90px;
+    height:90px;
+    background-color:rgba(255, 217, 0, 0.31);
+    border-radius:90px;
+    right:15%;
+    top:40%;
+    position:absolute;
+    z-index:1;
+    line-height:10px;
+}
+}
+@media(min-width:800px){
+  .discContainer{
+    position:relative;
+    z-index:0;
+    width:200px;
+    height:200px;
+    position:relative;
+    z-index:0;
+    margin-left:70%;
+    margin-top:10%;
+  }
+  .discCenter{
+      width:90px;
+      height:90px;
+      background-color:rgba(255, 217, 0, 0.31);
+      border-radius:90px;
+      right:15%;
+      top:40%;
+      position:absolute;
+      z-index:1;
+      line-height:10px;
+  }
+}
+
+.water{
+  width:100px;
+  height:100px;
+  /* border:1px solid black; */
+  border-radius: 69% 31% 56% 44% / 71% 61% 39% 29% ;
+  box-shadow: inset 5px 10px 15px rgba(0,0,0,0.5),
+  5px 10px 15px rgba(0,0,0,0.3),
+  10px 10px 15px rgba(0,0,0,0.05),
+  inset -5px -10px 10px rgba(255,255,255,0.8);
+  animation:water-action 4.5s linear infinite alternate;
+  padding-top:40px;
+}
+
+@keyframes water-action{
+  20%{
+       border-radius: 55% 45% 47% 53% / 77% 53% 47% 23% ;
+  }
+  40%{
+       border-radius:35% 65% 35% 65% / 85% 42% 58% 15% ;
+  }
+  60%{
+     border-radius: 61% 39% 54% 46% / 55% 62% 38% 45% ;
+  }
+  80%{
+    border-radius: 71% 29% 68% 32% / 44% 69% 31% 56% ;
+  }
+  100%{
+    border-radius: 47% 53% 79% 21% / 36% 79% 21% 64% ;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* below is email *********************************************************************************/
+
+.EmailLogIn{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  border-radius:10px 10px 10px 10px;
+  margin:5% auto;
+  width:500px;
+  height:600px;
+  border:1px solid rgb(228, 220, 220);
+  
+}
+
+.g1{
+  color:blue;
+  font-size:30px;
+}
+.o1{
+  color:red;
+  font-size:30px;
+}
+.o2{
+  color:rgb(219, 219, 30);
+  font-size:30px;
+}
+.g2{  
+  color:blue;
+  font-size:30px;
+}
+.l{
+  color:green;
+  font-size:30px;
+}
+.e{
+  color:red;
+  font-size:30px;
+}
+
+.Sign{
+  font-size:30px;
+}
+
+#EmailBox{
+  height:50px;
+  width:400px;
+  border:1px solid rgb(228, 220, 220);
+  border-radius:10px 10px 10px 10px;
+}
+#PasswordBox{
+  height:50px;
+  width:400px;
+  border:1px solid rgb(228, 220, 220);
+  border-radius:10px 10px 10px 10px;
+}
+
+/* .button{
+  border-radius: 5px 5px 5px 5px;
+  background-color: #007FFF;
+  height:40px;
+  width:85px;
+  color:white;
+  font-size:medium;
+  border:none;
+} */
+
+.ButtonBox{
+  width:90px;
+  height:45px;
+  border:1px solid transparent;
+  margin:30px 21% 30px 79% ;
+  
+}
+
+
+.TodoWrapper{
+  display:flex;
+  flex-direction:column;
+  /* padding:auto; */
+  border:5px solid purple;
+  border-radius:10px;
+  box-shadow:0 0 10px purple;
+  margin:auto auto;
+  align-items:center;
+  /* justify-content:center; */
+  width:900px;
+}
+
+
+
+
+.editDelete {
+  display:flex;
+  align-items:center;
+  border:2px solid purple;
+  border-radius:10px;
+  width:800px;
+  height:50px;
+  margin-bottom:20px;
+  padding:  30px; /* Add some padding for spacing */
+  /* box-sizing: border-box;  */
+  
+}
+
+.todo-btn{
+
+padding:0px 0px;
+height:25px;
+width:50px;
+margin-left:5px;
+font-size:15px;
+}
+
+.todo-text{
+  /* margin-right:auto;  */
+  /* transform:translateX(300px); */
+  flex-grow: 1;
+  
+  margin :0; 
+  text-align: center; 
+  
+}
+
+.TodoForm{
+  margin-bottom:20px;
+  
+}
+
