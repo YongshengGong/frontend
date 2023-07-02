@@ -4,14 +4,16 @@
 
 .App {
   width:100%;
-  height:100%;
-
+  min-height:100vh;
   display:flex;
   flex-direction:column;
   justify-content:center;
   text-align: center;   
- 
+  min-width:1000px;
+  overflow-x: hidden;
 } 
+
+
 
 .Nav{
   width:100%;
@@ -20,10 +22,9 @@
   box-shadow:grey 0px 0px 5px -1px;
   top:0px;
   background-color: white;
-  z-index:2;
+  z-index:1;
   display:flex;
   justify-content: flex-end;
-  padding-right:30px;
   gap:20px;
   align-items: center;
 }
@@ -36,22 +37,47 @@
   font-weight:bold;
 }
 
+.Nav-link1{
+color:white;
+text-decoration:none;
+font-size:20px;
+line-height:30px;
+;
+}
 
 
 .DropDownMenu{
+  height:200px;
+  width:200px;
+  background-color: black;
+  z-index:2;
   position:fixed;
-  top:80px;
-  right:30px;
+  top:20%;
+  bottom:0px;
+  right:-200px;
+  transition: 1s ease-out;
+  display:flex;
+  align-items: center;
+  margin-top:-10px;
+}
+
+.DropDownMenu.open{
+  transform: translateX(-130px);
+  z-index:2;
+  position:fixed;
+  border-radius:110px;
 }
 
 
 .ShowNavMenuBtn{
+  position:fixed;
+  z-index:2;
   display:none;
 }
 
-.NavMenuList{
+/* .NavMenuList{
   display:none;
-}
+} */
 
 @media(max-width:800px){
   .Nav-link{
@@ -63,8 +89,8 @@
 }
 
 @media(min-width:800px){
-  .NavMenuList{
-    display:none;
+  .DropDownMenu.open{
+    transform:translateX(100%);
   }
 }
 
@@ -72,6 +98,59 @@
   width:100%;
   height:720px;
   padding-top:180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  /* min-width:410px; */
+  position:relative;
+  z-index:0;
+}
+.sky {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  z-index:0;
+}
+.star {
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.intro {
+  z-index: 1;
+}
+.selfIntro1{
+  color:white;
+  font-size: 100px;
+}
+.selfIntro2{
+  color:white;
+  font-size: 50px;
+  margin-top:50px;
+}
+.selfIntro3{
+  color:white;
+  font-size: 20px;
 }
 
 .About{
@@ -89,7 +168,7 @@
     display:flex;
     flex-direction:column;
     padding-top:10%;
-
+    align-items: center;
   }
 }
 
@@ -97,7 +176,7 @@
 .heartANDpicture{
   position:relative;
   z-index:0;
-  
+
 }
 
 
@@ -145,7 +224,8 @@
   .Project{
   display:flex;
   width:100%;
-  height:1000px;
+  height:30px;
+  border:1px solid black;
 }
 
 
@@ -154,14 +234,15 @@
 .disc{
   width:250px;
   height:250px;
-  border:80px solid rgb(218, 189, 21);
-  border-left:80px solid goldenrod;
-  border-right:80px solid gold;
-  border-bottom:80px solid yellow;
+  border:75px solid rgb(218, 189, 21);
+  border-left:75px solid goldenrod;
+  border-right:75px solid gold;
+  border-bottom:75px solid yellow;
   border-radius:125px 125px 125px 125px;  /*当border-raius的值超过border时，border里面的区域也会圆角化*/
   /* box-shadow:100px 10px 10px 10px;  */
   background-color:white;
   animation:Rotate infinite 12s linear;
+  box-sizing: border-box;
 }
 @keyframes Rotate{
   0%{
@@ -196,11 +277,17 @@
 } */
 
 @media(max-width:800px){
-  .HomePage{
+  /* .HomePage{
     display:flex;
     flex-direction:column;
     align-items: center;
-  }
+    justify-content: center;
+    width:100%;
+    height:730px;
+    padding-top:170px;
+  } */
+
+ 
   .discContainer{
     position:relative;
     z-index:0;
@@ -210,10 +297,10 @@
     z-index:0;
   }
   .discCenter{
-    width:90px;
-    height:90px;
+    width:100px;
+    height:100px;
     background-color:rgba(255, 217, 0, 0.31);
-    border-radius:90px;
+    border-radius:50px;
     right:15%;
     top:40%;
     position:absolute;
@@ -229,26 +316,25 @@
     height:200px;
     position:relative;
     z-index:0;
-    margin-left:70%;
+    margin-left:60%;
     margin-top:10%;
   }
   .discCenter{
-      width:90px;
-      height:90px;
+      width:100px;
+      height:100px;
       background-color:rgba(255, 217, 0, 0.31);
-      border-radius:90px;
-      right:15%;
-      top:40%;
+      border-radius:50px;
+      right:12.1%;
+      top:37.54%;
       position:absolute;
       z-index:1;
       line-height:10px;
   }
 }
 
-.water{
+/* .water{
   width:100px;
-  height:100px;
-  /* border:1px solid black; */
+  height:70px;
   border-radius: 69% 31% 56% 44% / 71% 61% 39% 29% ;
   box-shadow: inset 5px 10px 15px rgba(0,0,0,0.5),
   5px 10px 15px rgba(0,0,0,0.3),
@@ -274,142 +360,4 @@
   100%{
     border-radius: 47% 53% 79% 21% / 36% 79% 21% 64% ;
   }
-}
-
-
-
-
-
-
-
-
-
-/* below is email *********************************************************************************/
-
-.EmailLogIn{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  border-radius:10px 10px 10px 10px;
-  margin:5% auto;
-  width:500px;
-  height:600px;
-  border:1px solid rgb(228, 220, 220);
-  
-}
-
-.g1{
-  color:blue;
-  font-size:30px;
-}
-.o1{
-  color:red;
-  font-size:30px;
-}
-.o2{
-  color:rgb(219, 219, 30);
-  font-size:30px;
-}
-.g2{  
-  color:blue;
-  font-size:30px;
-}
-.l{
-  color:green;
-  font-size:30px;
-}
-.e{
-  color:red;
-  font-size:30px;
-}
-
-.Sign{
-  font-size:30px;
-}
-
-#EmailBox{
-  height:50px;
-  width:400px;
-  border:1px solid rgb(228, 220, 220);
-  border-radius:10px 10px 10px 10px;
-}
-#PasswordBox{
-  height:50px;
-  width:400px;
-  border:1px solid rgb(228, 220, 220);
-  border-radius:10px 10px 10px 10px;
-}
-
-/* .button{
-  border-radius: 5px 5px 5px 5px;
-  background-color: #007FFF;
-  height:40px;
-  width:85px;
-  color:white;
-  font-size:medium;
-  border:none;
 } */
-
-.ButtonBox{
-  width:90px;
-  height:45px;
-  border:1px solid transparent;
-  margin:30px 21% 30px 79% ;
-  
-}
-
-
-.TodoWrapper{
-  display:flex;
-  flex-direction:column;
-  /* padding:auto; */
-  border:5px solid purple;
-  border-radius:10px;
-  box-shadow:0 0 10px purple;
-  margin:auto auto;
-  align-items:center;
-  /* justify-content:center; */
-  width:900px;
-}
-
-
-
-
-.editDelete {
-  display:flex;
-  align-items:center;
-  border:2px solid purple;
-  border-radius:10px;
-  width:800px;
-  height:50px;
-  margin-bottom:20px;
-  padding:  30px; /* Add some padding for spacing */
-  /* box-sizing: border-box;  */
-  
-}
-
-.todo-btn{
-
-padding:0px 0px;
-height:25px;
-width:50px;
-margin-left:5px;
-font-size:15px;
-}
-
-.todo-text{
-  /* margin-right:auto;  */
-  /* transform:translateX(300px); */
-  flex-grow: 1;
-  
-  margin :0; 
-  text-align: center; 
-  
-}
-
-.TodoForm{
-  margin-bottom:20px;
-  
-}
-

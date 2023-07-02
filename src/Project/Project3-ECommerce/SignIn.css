@@ -1,0 +1,44 @@
+.SignInContainer{
+    width:100%;
+    min-height:100vh;  /*100%就是整个窗口高度，超过100%就可以*/
+    min-width:350px;
+    /* border:0;
+    padding:0;
+    box-sizing:border-box; */
+    background-color: #f9c5bd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+@media(max-width:350px){
+    .SignInContainer{
+        width:100%;
+        min-height:120vh;  /*100%就是整个窗口高度，超过100%就可以*/
+        background-color: #f9c5bd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; 
+    }
+}
+
+.LogInBox{
+    width:300px;
+    height:300px;
+    border:5px solid #8076a3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top:30px;
+}
+
+.Error{
+    color:red;
+    width:200px;
+    height:50px;
+    border:1px solid black;
+    text-align: center;
+    margin-top:30px;
+}

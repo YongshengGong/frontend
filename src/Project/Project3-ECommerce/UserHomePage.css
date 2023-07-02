@@ -1,0 +1,51 @@
+.UserBTN{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width:90px; */
+    height:37.5px;
+    background-color:#8076a3;
+    border:3px solid #8076a3;
+    color:#f9c5bd;
+    font-size: 100%;
+    font-weight: 900;
+    margin-right:20px;
+    position: relative;
+}
+.UserBTN:hover{
+    border:3px solid #f9c5bd;
+    }
+
+.userDropDown{
+    display: none;
+}
+
+.UserBTN:hover .userDropDown{
+    display: block;
+    position:absolute;
+    top:40.5px;
+    right:10px;
+    width:200px;
+    height:80px;
+    border:5px solid white;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0px white;
+}
+
+
+.UserBTN p{
+margin:0px auto;
+}
+
+.navBar button, .AllItemContainer button{
+    background-color:white ;
+    border:2px solid #8076a3;
+    color:#8076a3;
+    font-size: 20px;
+}
+
+.navBar button:hover, .AllItemContainer button:hover{
+    background-color:rgba(247, 242, 242, 0.922)
+}
